@@ -1,0 +1,29 @@
+@startuml
+class av.VideoFrame
+class cv2
+class mediapipe.solutions.holistic.Holistic
+class mediapipe.solutions.hands.Hands
+class mediapipe.solutions.drawing_utils
+class keras.models.load_model
+class streamlit.st
+class streamlit.webrtc.webrtc_streamer
+class streamlit.SessionState
+class webbrowser
+class EmotionDetector
+
+av.VideoFrame -- EmotionDetector
+cv2 -- cv2.flip
+mediapipe.solutions.holistic.Holistic -- mediapipe.solutions.drawing_utils
+mediapipe.solutions.holistic.Holistic -- mediapipe.solutions.hands.Hands
+keras.models.load_model -- Model
+streamlit.st -- streamlit.SessionState
+streamlit.st -- streamlit.text_input
+streamlit.st -- streamlit.button
+streamlit.st -- streamlit.warning
+streamlit.st -- streamlit.webrtc_streamer
+streamlit.webrtc.webrtc_streamer -- EmotionDetector
+av.VideoFrame -- ndarray
+keras.models.load_model -- Model.predict
+webbrowser -- webbrowser.open
+
+@enduml
